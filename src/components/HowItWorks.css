@@ -1,0 +1,211 @@
+/* ============================================
+   HOW IT WORKS SECTION
+   ============================================ */
+
+.how-it-works {
+  padding: var(--section-pad);
+  background: var(--cream);
+}
+
+.how__steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  position: relative;
+  margin-bottom: 64px;
+  align-items: start;
+}
+
+/* Step wrapper (holds card + connector) */
+.how__step {
+  position: relative;
+  padding: 0 12px;
+}
+
+/* Connector between steps */
+.how__connector {
+  position: absolute;
+  top: 52px;
+  right: -16px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.how__connector-line {
+  width: 32px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--green-light), var(--green-primary));
+  position: relative;
+}
+
+.how__connector-line::before,
+.how__connector-line::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background: var(--green-primary);
+  border-radius: 50%;
+}
+
+.how__connector-line::before {
+  left: 0;
+}
+
+.how__connector-line::after {
+  right: 0;
+}
+
+.how__connector-arrow {
+  color: var(--green-primary);
+  margin-left: -4px;
+}
+
+/* Step card */
+.how__step-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px 24px;
+  text-align: center;
+  transition: transform var(--transition), box-shadow var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.how__step-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--green-primary), var(--green-light));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-slow);
+}
+
+.how__step-card:hover::before {
+  transform: scaleX(1);
+}
+
+.how__step-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Step number */
+.how__step-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--green-pale);
+  line-height: 1;
+  margin-bottom: 8px;
+  letter-spacing: -0.04em;
+  transition: color var(--transition);
+}
+
+.how__step-card:hover .how__step-number {
+  color: var(--green-primary);
+  opacity: 0.25;
+}
+
+/* Step icon */
+.how__step-icon {
+  font-size: 2.2rem;
+  margin-bottom: 16px;
+  display: block;
+  transition: transform var(--transition);
+}
+
+.how__step-card:hover .how__step-icon {
+  transform: scale(1.15) rotate(-5deg);
+}
+
+/* Step title */
+.how__step-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+}
+
+/* Step description */
+.how__step-desc {
+  font-size: 0.85rem;
+  color: var(--text-mid);
+  line-height: 1.65;
+}
+
+/* CTA at bottom */
+.how__cta {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background: linear-gradient(135deg, var(--green-pale) 0%, rgba(76, 175, 128, 0.1) 100%);
+  border: 1px solid rgba(46, 125, 82, 0.2);
+  border-radius: var(--radius-xl);
+  padding: 48px 32px;
+}
+
+.how__cta-text {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--charcoal);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1024px) {
+  .how__steps {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .how__step {
+    padding: 0;
+  }
+
+  /* Hide horizontal connectors on 2-column layout */
+  .how__connector {
+    display: none;
+  }
+}
+
+@media (max-width: 580px) {
+  .how__steps {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .how__step-card {
+    display: flex;
+    align-items: flex-start;
+    text-align: left;
+    gap: 16px;
+    padding: 20px;
+  }
+
+  .how__step-number {
+    font-size: 2rem;
+    min-width: 48px;
+    margin-bottom: 0;
+    margin-top: -4px;
+  }
+
+  .how__step-icon {
+    display: none;
+  }
+
+  .how__step-content {
+    flex: 1;
+  }
+}

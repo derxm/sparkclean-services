@@ -1,0 +1,204 @@
+/* ============================================
+   ABOUT SECTION
+   ============================================ */
+
+.about {
+  padding: var(--section-pad);
+  background: var(--cream);
+}
+
+.about__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* Visual / image column */
+.about__visual {
+  position: relative;
+}
+
+.about__img-wrap {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+  aspect-ratio: 4 / 5;
+}
+
+.about__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.about__img-wrap:hover .about__img {
+  transform: scale(1.03);
+}
+
+/* Years badge on image */
+.about__img-badge {
+  position: absolute;
+  bottom: 28px;
+  right: -20px;
+  background: var(--green-primary);
+  color: var(--white);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+  z-index: 2;
+}
+
+.about__img-badge-num {
+  display: block;
+  font-size: 2rem;
+  font-weight: 900;
+  line-height: 1;
+  font-family: 'Playfair Display', serif;
+}
+
+.about__img-badge-text {
+  font-size: 0.72rem;
+  font-weight: 600;
+  opacity: 0.9;
+  letter-spacing: 0.03em;
+  line-height: 1.4;
+}
+
+/* Floating review card */
+.about__float-card {
+  position: absolute;
+  top: 32px;
+  left: -28px;
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 2;
+  border: 1px solid var(--border);
+}
+
+.about__float-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.about__float-title {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--charcoal);
+  line-height: 1.2;
+}
+
+.about__float-sub {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  margin-top: 2px;
+}
+
+/* Text column */
+.about__text {
+  display: flex;
+  flex-direction: column;
+}
+
+.about__lead {
+  font-size: 1.1rem;
+  color: var(--charcoal);
+  font-weight: 500;
+  line-height: 1.65;
+  margin-bottom: 16px;
+}
+
+.about__body {
+  font-size: 0.95rem;
+  color: var(--text-mid);
+  line-height: 1.75;
+  margin-bottom: 40px;
+}
+
+/* Highlights grid */
+.about__highlights {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.about__highlight {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.about__highlight:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.about__highlight-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.about__highlight-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 4px;
+}
+
+.about__highlight-desc {
+  font-size: 0.82rem;
+  color: var(--text-mid);
+  line-height: 1.55;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1024px) {
+  .about__inner {
+    gap: 48px;
+  }
+}
+
+@media (max-width: 860px) {
+  .about__inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .about__visual {
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .about__img-badge {
+    right: 16px;
+  }
+
+  .about__float-card {
+    left: 0;
+    top: 20px;
+  }
+}
+
+@media (max-width: 520px) {
+  .about__highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .about__float-card {
+    display: none;
+  }
+}
