@@ -84,7 +84,7 @@ export default function Contact() {
               <div className="contact__detail-icon" aria-hidden="true">📞</div>
               <div>
                 <div className="contact__detail-label">Call Us</div>
-                <a href="tel:+15551234567" className="contact__detail-value">(555) 123-4567</a>
+                <a href="tel:+2348012345678" className="contact__detail-value">+234 801 234 5678</a>
               </div>
             </div>
             <div className="contact__detail">
@@ -196,7 +196,7 @@ export default function Contact() {
                     name="phone"
                     type="tel"
                     className="form-input"
-                    placeholder="(555) 000-0000"
+                    placeholder="+234 800 000 0000"
                     value={form.phone}
                     onChange={handleChange}
                     autoComplete="tel"

@@ -6,8 +6,8 @@ const plans = [
     id: 'basic',
     name: 'Basic',
     tagline: 'Great for regular upkeep',
-    monthlyPrice: 89,
-    oneTimePrice: 109,
+    monthlyPrice: 45000,
+    oneTimePrice: 55000,
     color: '#2a6496',
     badge: null,
     features: [
@@ -26,8 +26,8 @@ const plans = [
     id: 'standard',
     name: 'Standard',
     tagline: 'Our most popular package',
-    monthlyPrice: 139,
-    oneTimePrice: 169,
+    monthlyPrice: 75000,
+    oneTimePrice: 90000,
     color: '#2e7d52',
     badge: 'Most Popular',
     features: [
@@ -46,8 +46,8 @@ const plans = [
     id: 'premium',
     name: 'Premium',
     tagline: 'The complete white-glove experience',
-    monthlyPrice: 199,
-    oneTimePrice: 249,
+    monthlyPrice: 120000,
+    oneTimePrice: 150000,
     color: '#7a3090',
     badge: 'Best Value',
     features: [
@@ -122,9 +122,9 @@ export default function Pricing() {
                 <h3 className="pricing-card__name">{plan.name}</h3>
                 <p className="pricing-card__tagline">{plan.tagline}</p>
                 <div className="pricing-card__price">
-                  <span className="pricing-card__currency">$</span>
+                  <span className="pricing-card__currency">₦</span>
                   <span className="pricing-card__amount">
-                    {isMonthly ? plan.monthlyPrice : plan.oneTimePrice}
+                    {(isMonthly ? plan.monthlyPrice : plan.oneTimePrice).toLocaleString('en-NG')}
                   </span>
                   <span className="pricing-card__period">
                     {isMonthly ? '/mo' : '/clean'}
