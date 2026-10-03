@@ -105,7 +105,7 @@ export default function Contact() {
               <div className="contact__detail-icon" aria-hidden="true">📍</div>
               <div>
                 <div className="contact__detail-label">Service Area</div>
-                <div className="contact__detail-value">Austin &amp; surrounding areas</div>
+                <div className="contact__detail-value">Tanke &amp; surrounding areas</div>
               </div>
             </div>
           </div>
